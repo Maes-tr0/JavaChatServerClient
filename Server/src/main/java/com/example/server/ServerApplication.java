@@ -1,2 +1,4 @@
-package com.example.server;public class ServerApplication {
+package com.example.server;
+
+public class ServerApplication {
 }

@@ -1,4 +1,4 @@
-package com.example.client;
+package com.example.client.model;
 
 import java.util.Objects;
 

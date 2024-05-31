@@ -1,5 +1,6 @@
-package com.example.client;
+package com.example.client.controller;
 
+import com.example.client.model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -38,10 +39,10 @@ public class AuthController {
     @FXML
     private void handleSignUpLink() {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("auth/RegistrationForm.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/client/auth/RegistrationForm.fxml")));
             stage = getCurrentStage();
             scene = new Scene(root);
-            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("auth/styles.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/example/client/auth/styles.css")).toExternalForm());
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -51,12 +52,12 @@ public class AuthController {
     @FXML
     private void handleSignInLink() {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("auth/LoginForm.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/client/auth/LoginForm.fxml")));
             stage = getCurrentStage();
             scene = new Scene(root);
-            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("auth/styles.css")).toExternalForm());
+            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/example/client/auth/styles.css")).toExternalForm());
             stage.setScene(scene);
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

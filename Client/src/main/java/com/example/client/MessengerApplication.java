@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.client;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,9 +11,9 @@ import java.util.Objects;
 public class MessengerApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("chat/ChatForm.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/client/auth/RegistrationForm.fxml")));
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("chat/styles.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/example/client/auth/styles.css")).toExternalForm());
         primaryStage.setTitle("User Registration");
         primaryStage.setScene(scene);
         primaryStage.setMinWidth(600);

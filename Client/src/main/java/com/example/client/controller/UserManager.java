@@ -1,4 +1,6 @@
-package com.example.client;
+package com.example.client.controller;
+
+import com.example.client.model.User;
 
 import java.io.*;
 import java.util.ArrayList;
