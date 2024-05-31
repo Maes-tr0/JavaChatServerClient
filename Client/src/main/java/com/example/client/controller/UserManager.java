@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserManager {
-    private static final String FILE_NAME = "users.txt";
+    private static final String FILE_NAME = "F:\\ProjectsOn(Java)\\Messenger\\users.txt";
     private List<User> users;
 
     public UserManager() {
