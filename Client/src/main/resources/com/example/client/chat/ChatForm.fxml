@@ -15,11 +15,11 @@
     <BorderPane prefHeight="600.0" prefWidth="800.0">
         <center>
             <VBox fx:id="mainChat" styleClass="main-chat">
-            <Label text="Label" />
+                <Label text="Label" />
                 <TextArea fx:id="chatArea" editable="false" prefHeight="565.0" prefWidth="500.0" styleClass="chat-area" />
                 <HBox>
-                    <TextField />
-                    <Button fx:id="sendButton" styleClass="send-button" text="Send" />
+                    <TextField fx:id="messageField"/>
+                    <Button fx:id="sendButton" onAction="#sendMessage" styleClass="send-button" text="Send" />
                 </HBox>
             </VBox>
         </center>
@@ -29,13 +29,13 @@
                     <ListView fx:id="pinnedChatList" prefHeight="600.0" prefWidth="10.0" />
                 </VBox>
                 <VBox fx:id="allChats" prefWidth="200.0" styleClass="all-chat">
-               <TextField />
+                    <TextField />
                     <ListView fx:id="chatList" prefHeight="604.0" prefWidth="200.0" />
                 </VBox>
             </HBox>
         </left>
-      <right>
-         <ScrollBar orientation="VERTICAL" prefHeight="409.0" prefWidth="14.0" BorderPane.alignment="CENTER" />
-      </right>
+        <right>
+            <ScrollBar orientation="VERTICAL" prefHeight="409.0" prefWidth="14.0" BorderPane.alignment="CENTER" />
+        </right>
     </BorderPane>
 </AnchorPane>

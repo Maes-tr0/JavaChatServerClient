@@ -20,6 +20,8 @@ public class AuthController {
     private Parent root;
     private Scene scene;
 
+    private ServerConnection serverConnection;
+
     private final UserManager userManager = new UserManager();
 
     @FXML
@@ -92,11 +94,10 @@ public class AuthController {
             return;
         }
 
-
         // Save user information here
         saveUserInformation(firstName, lastName, email, password);
-
-        showAlert(Alert.AlertType.INFORMATION, "Registration Successful!", "Welcome " + firstName + "!");
+        handleSignInLink();
+        showAlert(Alert.AlertType.INFORMATION, "Registration Successful!", "Now sign in to your account " + firstName + "!");
     }
 
     @FXML
@@ -110,7 +111,6 @@ public class AuthController {
             return;
         }
 
-
         if (user == null) {
             showAlert(Alert.AlertType.ERROR, "Form Error!", "No account found with this email");
             return;
@@ -121,6 +121,26 @@ public class AuthController {
             return;
         }
 
+        try {
+            serverConnection = new ServerConnection();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/client/chat/ChatForm.fxml"));
+            Parent root = loader.load();
+            ChatController chatController = loader.getController();
+            chatController.initialize();
+            chatController.connectToServer(user);  // Передаємо об'єкт користувача
+
+            Stage stage = new Stage();
+            stage.setTitle("Chat");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+            // Close login form
+            Stage loginStage = (Stage) loginEmailField.getScene().getWindow();
+            loginStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         showAlert(Alert.AlertType.INFORMATION, "Login Successful!", "Welcome back, " + user.getFirstName() + "!");
     }
 

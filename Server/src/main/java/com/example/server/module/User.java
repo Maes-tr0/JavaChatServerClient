@@ -1,6 +1,4 @@
-package com.example.client.model;
-
-import java.util.Objects;
+package com.example.server.module;
 
 public class User {
     private String firstName;
@@ -33,23 +31,5 @@ public class User {
 
     public String getFullname() {
         return firstName + " " + lastName;
-    }
-
-    @Override
-    public String toString() {
-        return firstName + "," + lastName + "," + email + "," + password;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(email, user.email);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(email);
     }
 }
